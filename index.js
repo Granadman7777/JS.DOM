@@ -1,12 +1,26 @@
-function eachWordInUpper(str) {
-    const wordArray = str.split(' ');
-    const resultWordArray = [];
+const collection = document.getElementsByClassName('paragraph');
+console.log(collection);
 
-    for(let i = 0; i < wordArray.lenght; i++) {
-        let word = (wordArray[i].charAt(0).toUpperCase() + wordArray[i].slice(1))
-        resultWordArray.push(word);
-    }
-    return resultWordArray.join('-')
+for (const p of collection) {
+    p.style.color = 'green';
 }
 
-console.log(eachWordInUpper('hello to you'));
+const btns = document.getElementsByTagName('button'); 
+console.log(btns);
+
+const arr = [...btns];
+console.log(arr);
+
+
+function hello() {
+    console.log('Hello, Dog')
+}
+// Первый вариант 
+//btns[0].addEventListener('click', hello);
+//btns[1].addEventListener('click', hello);
+//btns[2].addEventListener('click', hello);
+
+// Второй вариант 
+for(const btn of btns ) {
+    btn.addEventListener('click', hello);
+}
