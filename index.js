@@ -1,19 +1,23 @@
+//const event = new Event('click');
+//console.log(event); 
 
-let num = 0;
+const btn = document.querySelector('button');
+const div = document.querySelector('#root')
 
-const div = document.querySelector('#number');
-const [decrement, increment] = document.querySelectorAll('.btn')
-
-function updateDiv() {
-div.innerHTML = num;
+const eventHandler = (event) => {
+    if(event.currentTarget === document.body);
+    event.stopPropagation();
+    console.log('no buttons dog')
 }
-
-decrement.addEventListener('click', () => {
-    num--;
-    updateDiv();
+console.group();
+btn.addEventListener('click', eventHandler, () => {
+console.log('hello dog');
 })
+//div.addEventListener('click', eventHandler,{capture: true});
+//document.body.addEventListener('click', eventHandler,{capture: true});
+//window.addEventListener('click', eventHandler, {capture: true});
+console.groupEnd()
 
-increment.addEventListener('click', () => {
-    num++;
-    updateDiv();
-})
+
+//const event = new MouseEvent('click');
+//btn.dispatchEvent(event);
