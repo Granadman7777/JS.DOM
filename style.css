@@ -1,0 +1,28 @@
+.slide-img {
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.slider {
+    position: relative;
+}
+
+.btn {
+   
+    background-color: rgba(0, 0, 0, 0.445);
+    border: 0;
+    font-size: 2em;
+    font-weight: bold;
+    color:rgba(225, 225, 225, 0.642);
+    top: 50%;
+    position: absolute;
+}
+
+.prev {
+    left: 2%;
+}
+
+.next {
+    right: 25;
+}
