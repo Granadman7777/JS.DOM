@@ -1,23 +1,11 @@
-//const event = new Event('click');
-//console.log(event); 
+
+
+function createDiv() {
+    const div = document.createElement('div'); // cоздаем элемент в памяти 
+    div.classList.add('box');
+    div.append('hello dog');
+    document.body.append(div); // присоединяем к родительскому элемнту 
+}
 
 const btn = document.querySelector('button');
-const div = document.querySelector('#root')
-
-const eventHandler = (event) => {
-    if(event.currentTarget === document.body);
-    event.stopPropagation();
-    console.log('no buttons dog')
-}
-console.group();
-btn.addEventListener('click', eventHandler, () => {
-console.log('hello dog');
-})
-//div.addEventListener('click', eventHandler,{capture: true});
-//document.body.addEventListener('click', eventHandler,{capture: true});
-//window.addEventListener('click', eventHandler, {capture: true});
-console.groupEnd()
-
-
-//const event = new MouseEvent('click');
-//btn.dispatchEvent(event);
+btn.addEventListener('click', createDiv);
