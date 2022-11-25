@@ -1,25 +1,11 @@
-const field = document.querySelector('#game-field');
-const box = document.querySelector('#box');
-const divCounter = document.querySelector('#counter')
+const div = document.createElement('div');
+div.append('Hello, Dog') // Apend прокидывает в див текст
+console.log(div);
+// 
+const body = document.body;
+console.log(body); 
+body.append(div);
 
-let counter = 0;
-
-field.addEventListener('click', clickHandler, {capture: true});
-
-function clickHandler(event) {
-    const {currentTarget, target, currentTarget:{children: {box}}} = event;
-    if(event.currentTarget !== target) {   
-       updateCounter();
-    }
-
-    box.style.top = `${randomCoodinates(currentTarget.offsetHeight)}px`
-    box.style.left = `${randomCoodinates(currentTarget.offsetHeight)}px`
-}
-
-function updateCounter() {
-    divCounter.textContent = ++counter;
-} 
-
-function rendomCoordinates(max) {
-    return Math.floor(Math.random() * max);
-}
+const div2 = document.createElement('div').append('test');
+div2.append('test');
+div.appebd(div2);
