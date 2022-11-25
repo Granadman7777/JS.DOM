@@ -1,11 +1,25 @@
+const field = document.querySelector('#game-field');
+const box = document.querySelector('#box');
+const divCounter = document.querySelector('#counter')
 
+let counter = 0;
 
-function createDiv() {
-    const div = document.createElement('div'); // cоздаем элемент в памяти 
-    div.classList.add('box');
-    div.append('hello dog');
-    document.body.append(div); // присоединяем к родительскому элемнту 
+field.addEventListener('click', clickHandler, {capture: true});
+
+function clickHandler(event) {
+    const {currentTarget, target, currentTarget:{children: {box}}} = event;
+    if(event.currentTarget !== target) {   
+       updateCounter();
+    }
+
+    box.style.top = `${randomCoodinates(currentTarget.offsetHeight)}px`
+    box.style.left = `${randomCoodinates(currentTarget.offsetHeight)}px`
 }
 
-const btn = document.querySelector('button');
-btn.addEventListener('click', createDiv);
+function updateCounter() {
+    divCounter.textContent = ++counter;
+} 
+
+function rendomCoordinates(max) {
+    return Math.floor(Math.random() * max);
+}

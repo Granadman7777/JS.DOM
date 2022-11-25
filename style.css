@@ -1,9 +1,18 @@
-body {
-    background-color: bisque;
+#game-field {
+    background-color: azure;
+    border: 1px solid grey;
+    width: 500px;
+    height: 500px;
 }
 
-.box {
-width: 50px;
-height: 50px;
-background-color: black;
+#box {
+    width: 50px;
+    height: 50px;
+    background-color: greenyellow;
+    border: 2px solid black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
 }
