@@ -1,22 +1,19 @@
-const form = document.getElementById('form');
-const root = document.getElementById('root');
+const box = document.querySelector('#box');
 
-const state = []; // Тут будут Таски 
- 
-form.addEventListener('submit',addItem);
+box.addEventListener('click', boxClickHandler);
 
-function addItem(event) {
-    event.preventDefault();
-    const {target: {textInput: {value}}} = event;
-    state.push(value);
-    const li = createItem(value);
-    root.append(li);
-    target.reset()
+function boxClickHandler(event) {
+    const input = documents.createElement('input');
+    input.addEventListener('keydown', inputKeyHandler);
+    const parent = event.target.parentNode;
+    parent.append(input)
 }
 
-function createItem(value) {
-    const li = document.createElement('li');
-    li.append(value);
-    li.classList.add('item');
-    return li;
+function inputKeyHandler({target, target: {value,previosElementSibling}}) {
+if(event.keyCode === 13) {
+    // передать данные элементу (box)
+    previosElementSibling.textContent = value;
+    // Удаляем input при помощи keyCode 
+    target.remove();
+}
 }

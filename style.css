@@ -2,6 +2,8 @@ body {
     background-color: bisque
 }
 
-.item {
-    list-style-type: disc;
+#box {
+    width: 50px;
+    height: 50px;
+    border: 1px solid blanchedalmond;
 }
